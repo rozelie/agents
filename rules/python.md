@@ -72,7 +72,7 @@ Examples:
 
 ## Other
 
-*TODO:* Encourage functools.wraps
-*TODO:* SCREAMING_SNAKE_CASE for constants
-*TODO:* In `except` blocks, always either re-raise or log it, NEVER swallow an exception without some logging event that it occurred
-*TODO:* Always add a newline after a dedent, except for try/except blocks that try only a single line of code
+- *TODO:* Encourage functools.wraps
+- *TODO:* SCREAMING_SNAKE_CASE for constants
+- *TODO:* In `except` blocks, always either re-raise or log it, NEVER swallow an exception without some logging event that it occurred
+- *TODO:* Always add a newline after a dedent, except for try/except blocks that try only a single line of code
