@@ -14,8 +14,9 @@ Rules document guidelines to follow for specific contexts.
 - [react.md](./rules/react.md): *[WIP]* React frontend framework guidelines
 - [testing.md](./rules/testing.md): *[WIP]* Language-agnostic testing guidelines
 - [python.md](./rules/python.md): *[WIP]* Python programming language guidelines
+- [fastapi.md](./rules/fastapi.md): *[WIP]* `FastAPI` Python package guidelines
+- [pydantic.md](./rules/pydantic.md): *[WIP]* `Pydantic` Python package guidelines
 - *TODO:* typescript.md
-- *TODO:* fastapi.md
 - *TODO:* sqlalchemy.md
 - *TODO:* databases.md
 

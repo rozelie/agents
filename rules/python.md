@@ -10,7 +10,16 @@ Python programming language guidelines.
 
 ## Modules
 
-Python constructs should always be defined in this order within a module:
+- Keep declarations ordered:
+    1. imports
+    2. logger instantiation
+    3. constants
+    4. classes
+    5. public functions
+    6. private functions
+- Prefer splitting modules once they exceed one major responsibility
+- Prefer modules to be named a single word
+- Prefer a `utils.py` module for catch-all, reusable utilities that have no other clear module to be in
 
 1. imports
 2. logger instantiation
@@ -21,7 +30,9 @@ Python constructs should always be defined in this order within a module:
 
 ## Functions
 
-Always prefer using functions over classes.
+- Always prefer using functions over classes
+- Prefer small orchestration functions that delegate to focused private function
+- Keep private functions module-private (`_name`) unless shared across modules
 
 Functions should always:
 
@@ -39,18 +50,22 @@ Functions should never:
 
 ## Classes
 
-Always prefer using a `dataclass` over a normal class.
+- Prefer `dataclass` for pure data containers
+- Prefer `pydantic` models for validation/serialization boundaries
 
 ## Typing
-
-All Python constructs must be fully typed and narrowly typed as possible.
-
-If `typing.Any` is used, it must include either a:
-
-1. `NOTE` comment describing why `Any` must be used
-2. `TODO` comment to replace `Any` with a concrete type
+- Fully type all functions, including private one
+- Avoid `Any`. If unavoidable, require either a:
+    - `NOTE` comment describing why `Any` must be used
+    - `TODO` comment to replace `Any` with a concrete type
+- When a function always raises, annotate as `NoReturn`
+- For parsed/untrusted data, validate into typed models early (do not pass raw dicts deep into logic).
 
 *TODO:* Add instructions on when to use future annotations and built-in types vs. importing
+
+## Errors and Exceptions
+
+- In `except` blocks, always re-raise with context or log and raise; never silently swallow
 
 ## Docstrings
 
